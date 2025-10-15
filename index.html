@@ -11,7 +11,7 @@
 <body>
   <header class="navbar">
     <h1 class="logo">Barath Raja</h1>
-    <nav>
+    <nav id="nav-menu">
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#experience">Experience</a></li>
@@ -21,11 +21,11 @@
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
+    <div class="hamburger" id="hamburger">☰</div>
   </header>
 
   <section class="hero">
-   !-- <img src="https://images.unsplash.com/photo-1581093588401-22da6f3f50c7?auto=format&fit=crop&w=1600&q=80" alt="Data Engineering" class="hero-bg" />
-    <div class="hero-text fade-in">
+   <div class="hero-text fade-in">
       <h2>Data Engineer</h2>
       <p>Building scalable data solutions with Azure, Databricks, Airflow, and dbt</p>
     </div>
@@ -38,23 +38,25 @@
 
   <section id="experience" class="container fade-in">
     <h2>Experience</h2>
-    <div class="card">
-      <h3>Allied Irish Banks — Data Engineer</h3>
-      <p class="sub">Aug 2021 – Present | Dublin, Ireland</p>
-      <ul>
-        <li>Led Azure Data Engineering project using Databricks and Medallion Architecture reducing ETL time by 50%.</li>
-        <li>Migrated Teradata/SAS jobs to Databricks PySpark pipelines.</li>
-        <li>Implemented proactive monitoring improving reliability.</li>
-      </ul>
-    </div>
-    <div class="card">
-      <h3>Tata Consultancy Services — Data Engineer</h3>
-      <p class="sub">Jan 2017 – Apr 2019 | Chennai, India</p>
-      <ul>
-        <li>Developed large-scale banking datasets and automated ETL workflows.</li>
-        <li>Implemented Hadoop + Hive pipelines, cutting runtime by 20%.</li>
-        <li>Built Power BI dashboards and managed Agile releases.</li>
-      </ul>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Allied Irish Banks — Data Engineer</h3>
+        <p class="sub">Aug 2021 – Present | Dublin, Ireland</p>
+        <ul>
+          <li>Led Azure Data Engineering project using Databricks and Medallion Architecture reducing ETL time by 50%.</li>
+          <li>Migrated Teradata/SAS jobs to Databricks PySpark pipelines.</li>
+          <li>Implemented proactive monitoring improving reliability.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Tata Consultancy Services — Data Engineer</h3>
+        <p class="sub">Jan 2017 – Apr 2019 | Chennai, India</p>
+        <ul>
+          <li>Developed large-scale banking datasets and automated ETL workflows.</li>
+          <li>Implemented Hadoop + Hive pipelines, cutting runtime by 20%.</li>
+          <li>Built Power BI dashboards and managed Agile releases.</li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -78,29 +80,33 @@
 
   <section id="projects" class="container fade-in">
     <h2>Projects</h2>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1600&q=80" alt="POI Recommendation System" />
-      <h3>Point of Interest (POI) Recommendation System</h3>
-      <p>Designed and deployed a hybrid recommendation system combining collaborative filtering and content-based modeling to improve POI diversity by 3%.</p>
-      <p class="sub">Tech: Python, TensorFlow, Django, PySpark</p>
-    </div>
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=1600&q=80" alt="Text to SQL" />
-      <h3>Text to SQL Generation with Deep Learning</h3>
-      <p>Built a system to convert natural language queries into SQL commands using Hugging Face Transformers and PyTorch.</p>
-      <p class="sub">Tech: Python, Transformers, SpaCy, PyTorch</p>
+    <div class="card-grid">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1600&q=80" alt="POI Recommendation System" />
+        <h3>Point of Interest (POI) Recommendation System</h3>
+        <p>Designed and deployed a hybrid recommendation system combining collaborative filtering and content-based modeling to improve POI diversity by 3%.</p>
+        <p class="sub">Tech: Python, TensorFlow, Django, PySpark</p>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=1600&q=80" alt="Text to SQL" />
+        <h3>Text to SQL Generation with Deep Learning</h3>
+        <p>Built a system to convert natural language queries into SQL commands using Hugging Face Transformers and PyTorch.</p>
+        <p class="sub">Tech: Python, Transformers, SpaCy, PyTorch</p>
+      </div>
     </div>
   </section>
 
   <section id="education" class="container fade-in">
     <h2>Education</h2>
-    <div class="card">
-      <h3>Dublin City University</h3>
-      <p>MSc in Data Analytics | 2019 – 2020 | Dublin, Ireland</p>
-    </div>
-    <div class="card">
-      <h3>Kalasalingam University</h3>
-      <p>B.Tech in Information Technology | 2011 – 2015 | Tamil Nadu, India</p>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Dublin City University</h3>
+        <p>MSc in Data Analytics | 2019 – 2020 | Dublin, Ireland</p>
+      </div>
+      <div class="card">
+        <h3>Kalasalingam University</h3>
+        <p>B.Tech in Information Technology | 2011 – 2015 | Tamil Nadu, India</p>
+      </div>
     </div>
   </section>
 
@@ -120,13 +126,19 @@
   <script>
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
+        if (entry.isIntersecting) entry.target.classList.add('visible');
       });
     });
 
     document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+
+    // Hamburger menu toggle
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('show');
+    });
   </script>
 </body>
 </html>
+
