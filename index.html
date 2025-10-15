@@ -1,11 +1,229 @@
+<!-- index.html -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Home</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Barath Raja | Data Engineer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+  <header class="navbar">
+    <h1 class="logo">Barath Raja</h1>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<h1>Welcome to my web page</h1>
+  <section class="hero">
+    <img src="https://images.unsplash.com/photo-1581093588401-22da6f3f50c7?auto=format&fit=crop&w=1600&q=80" alt="Data Engineering" class="hero-bg" />
+    <div class="hero-text fade-in">
+      <h2>Data Engineer</h2>
+      <p>Building scalable data solutions with Azure, Databricks, Airflow, and dbt</p>
+    </div>
+  </section>
 
+  <section id="about" class="container fade-in">
+    <h2>About Me</h2>
+    <p>I am a Data Engineer with 7+ years of experience designing, building, and optimizing secure, end-to-end data pipelines in Azure and GCP. I specialize in modernizing legacy systems using PySpark and Databricks, ensuring reliable, production-grade data solutions.</p>
+  </section>
+
+  <section id="experience" class="container fade-in">
+    <h2>Experience</h2>
+    <div class="card">
+      <h3>Allied Irish Banks — Data Engineer</h3>
+      <p class="sub">Aug 2021 – Present | Dublin, Ireland</p>
+      <ul>
+        <li>Led Azure Data Engineering project using Databricks and Medallion Architecture reducing ETL time by 50%.</li>
+        <li>Migrated Teradata/SAS jobs to Databricks PySpark pipelines.</li>
+        <li>Implemented proactive monitoring improving reliability.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Tata Consultancy Services — Data Engineer</h3>
+      <p class="sub">Jan 2017 – Apr 2019 | Chennai, India</p>
+      <ul>
+        <li>Developed large-scale banking datasets and automated ETL workflows.</li>
+        <li>Implemented Hadoop + Hive pipelines, cutting runtime by 20%.</li>
+        <li>Built Power BI dashboards and managed Agile releases.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="skills" class="container fade-in">
+    <h2>Technical Skills</h2>
+    <div class="skills-grid">
+      <div>Python</div>
+      <div>PySpark</div>
+      <div>SQL</div>
+      <div>Databricks</div>
+      <div>Airflow</div>
+      <div>dbt</div>
+      <div>Azure</div>
+      <div>GCP</div>
+      <div>Hive</div>
+      <div>Docker</div>
+      <div>Git</div>
+      <div>Power BI</div>
+    </div>
+  </section>
+
+  <section id="projects" class="container fade-in">
+    <h2>Projects</h2>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1600&q=80" alt="POI Recommendation System" />
+      <h3>Point of Interest (POI) Recommendation System</h3>
+      <p>Designed and deployed a hybrid recommendation system combining collaborative filtering and content-based modeling to improve POI diversity by 3%.</p>
+      <p class="sub">Tech: Python, TensorFlow, Django, PySpark</p>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=1600&q=80" alt="Text to SQL" />
+      <h3>Text to SQL Generation with Deep Learning</h3>
+      <p>Built a system to convert natural language queries into SQL commands using Hugging Face Transformers and PyTorch.</p>
+      <p class="sub">Tech: Python, Transformers, SpaCy, PyTorch</p>
+    </div>
+  </section>
+
+  <section id="education" class="container fade-in">
+    <h2>Education</h2>
+    <div class="card">
+      <h3>Dublin City University</h3>
+      <p>MSc in Data Analytics | 2019 – 2020 | Dublin, Ireland</p>
+    </div>
+    <div class="card">
+      <h3>Kalasalingam University</h3>
+      <p>B.Tech in Information Technology | 2011 – 2015 | Tamil Nadu, India</p>
+    </div>
+  </section>
+
+  <section id="contact" class="container fade-in">
+    <h2>Get in Touch</h2>
+    <p>I’m open to data engineering roles and collaborations.</p>
+    <div class="contact-icons">
+      <a href="mailto:barath864148@gmail.com"><img src="https://img.icons8.com/ios-filled/50/000000/new-post.png" alt="Email" /></a>
+      <a href="https://linkedin.com/in/barath-raja" target="_blank"><img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png" alt="LinkedIn" /></a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Barath Raja. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    });
+
+    document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+  </script>
 </body>
 </html>
+
+/* style.css */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  color: #333;
+  background: #fff;
+  scroll-behavior: smooth;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo { color: #4f46e5; font-weight: 700; }
+.nav-links { list-style: none; display: flex; gap: 1.5rem; }
+.nav-links a { text-decoration: none; color: #444; font-weight: 500; }
+.nav-links a:hover { color: #4f46e5; }
+
+.hero {
+  position: relative;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+.hero-bg {
+  width: 100%;
+  height: 70vh;
+  object-fit: cover;
+  filter: brightness(0.5);
+}
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.hero-text h2 { font-size: 3rem; margin-bottom: 0.5rem; }
+.hero-text p { font-size: 1.2rem; }
+
+.container { max-width: 1000px; margin: 3rem auto; padding: 0 1.5rem; }
+.container h2 { color: #4f46e5; font-size: 2rem; margin-bottom: 1rem; }
+.card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+.sub { color: #666; font-size: 0.9rem; }
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+}
+.skills-grid div {
+  background: #f9fafb;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+.skills-grid div:hover { background: #eef2ff; }
+
+.contact-icons img { width: 40px; margin: 0 10px; transition: transform 0.3s; }
+.contact-icons img:hover { transform: scale(1.1); }
+
+footer {
+  background: #f9fafb;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+}
+
+.fade-in { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+.visible { opacity: 1; transform: translateY(0); }
